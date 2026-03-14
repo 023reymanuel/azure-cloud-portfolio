@@ -1,0 +1,11 @@
+# Terraform state - never commit this, contains sensitive data
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.tfvars
+crash.log
+override.tf
+
+# Azure credentials
+*.pem
+*.key
