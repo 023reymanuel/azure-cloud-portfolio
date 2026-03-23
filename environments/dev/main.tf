@@ -33,3 +33,13 @@ module "networking" {
   tags                  = var.tags
 }
 
+module "compute" {
+  source = "../../modules/compute"
+
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
+  public_subnet_id    = module.networking.public_subnet_id
+  private_subnet_id   = module.networking.private_subnet_id
+  ssh_public_key      = file("~/.ssh/id_rsa.pub")
+  tags                = var.tags
+}
