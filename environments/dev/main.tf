@@ -40,6 +40,7 @@ module "compute" {
   location            = azurerm_resource_group.main.location
   public_subnet_id    = module.networking.public_subnet_id
   private_subnet_id   = module.networking.private_subnet_id
-  ssh_public_key      = file("~/.ssh/id_rsa.pub")
+  ssh_public_key      = var.ssh_public_key
+
   tags                = var.tags
 }
