@@ -42,5 +42,5 @@ module "compute" {
   private_subnet_id   = module.networking.private_subnet_id
   ssh_public_key      = var.ssh_public_key
 
-  tags                = var.tags
+  tags = var.tags
 }
